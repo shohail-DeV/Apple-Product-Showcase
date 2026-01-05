@@ -31,10 +31,13 @@ pipeline {
         }
 
         stage('Test') {
-            steps {
-                bat 'npm test || echo "Test Skipped"'
-            }
+    steps {
+        catchError(buildResult: 'SUCCESS', stageResult: 'UNSTABLE') {
+            bat 'npm test'
         }
+    }
+}
+
 
         stage('Build Application') {
             steps {
