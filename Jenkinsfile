@@ -38,7 +38,7 @@ pipeline {
 
         stage('Build Application') {
             steps {
-                bat 'npm run build'
+                bat 'npx vite build'
             }
         }
 
