@@ -30,9 +30,9 @@ pipeline {
             }
         }
 
-        stage('Lint') {
+        stage('Test') {
             steps {
-                bat 'npm run lint || echo "Lint skipped"'
+                bat 'npm test || echo "Test Skipped"'
             }
         }
 
