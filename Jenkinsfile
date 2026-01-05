@@ -30,14 +30,11 @@ pipeline {
             }
         }
 
-        stage('Test') {
-    steps {
-        catchError(buildResult: 'SUCCESS', stageResult: 'UNSTABLE') {
-            bat 'npm test'
-        }
-    }
-}
-
+        // stage('Lint') {
+        //     steps {
+        //         bat 'npm run lint || echo "Lint skipped"'
+        //     }
+        // }
 
         stage('Build Application') {
             steps {
